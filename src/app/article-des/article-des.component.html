@@ -1,0 +1,22 @@
+<div *ngFor="let produit of produits" class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img
+                    src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp"
+                    alt="Trendy Pants and Shoes"
+                    class="img-fluid rounded-start"
+            />
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{produit.nomArticle}}</h5>
+                <p class="card-text">
+                    {{produit.description}}
+                </p>
+                <p class="card-text">
+                    {{produit.prix}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

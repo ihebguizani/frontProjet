@@ -1,0 +1,22 @@
+<app-nav></app-nav>
+<h2 style="right: 80%" class="text-center">liste des produit</h2>
+<button style="left: 70%" (click)="openup()" mat-raised-button color="primary">+Ajouter un article pour vendue</button>
+<div class="product-container">
+  <div *ngFor="let produit of produits" class="card-group product">
+    <div class="d-lg-inline-flex">
+        <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ produit.nomArticle }}</h5>
+          <p class="card-text"> {{produit.description}}</p>
+          <p class="card-text"><small class="text-muted">{{ produit.prix }} DT</small></p>
+        </div>
+        <div class="justify-content-md-around">
+          <input class="btn-check" type="button" (click)="opendetaille(produit.idArticle)">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
