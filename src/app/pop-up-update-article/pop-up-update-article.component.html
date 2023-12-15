@@ -1,23 +1,27 @@
-<!--
+<h1 mat-dialog-title class="text-center">{{inputdata.title}}</h1>
 <div class="container">
   <fieldset>
-    <form>
-      <div class="form-group">
+    <form [formGroup]="articleForm">
+      <div class="form-group" >
         <label><span class="req">*</span> Nom Article </label>
-        <input class="form-control" type="text" [(ngModel)]="nomArticle" name="nomP" id="nomP"
+        <input class="form-control" type="text" formControlName="nom"
                placeholder="entrer le nom article"/>
       </div>
       <div class="form-group">
-        <label><span class="req">*</span> Nom Article </label>
-        <input class="form-control" type="text" [(ngModel)]="prixArticle" name="prix" id="prix"
+        <label><span class="req">*</span> Prix Article</label>
+        <input class="form-control" type="text" formControlName="prix"
                placeholder="entrer le prix article"/>
       </div>
+        <div class="form-group">
+            <label><span class="req">*</span>Description</label>
+            <input class="form-control" type="text" formControlName="description"
+                   placeholder="entrer le description article"/>
+        </div>
 
       <div class="form-group">
-        <input class="btn btn-success" type="submit" name="submit_reg" value="Update"
-               >
-      </div>
+        <button type="submit" mat-raised-button color="primary" (click)="updateNow(data.idArticle)">Update</button>
+        <button (click)="closepop()" mat-raised-button color="warn">close</button>
+    </div>
     </form>
   </fieldset>
 </div>
--->

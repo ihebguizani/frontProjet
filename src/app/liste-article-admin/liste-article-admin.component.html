@@ -1,1 +1,39 @@
-<p>liste-article-admin works!</p>
+<app-nav></app-nav>
+<table>
+    <tr>
+        <td>
+<div >
+    <app-sidebar></app-sidebar>
+</div>
+            </td>
+        <td>
+<div class="col-md-9" >
+<h2 class="text-center">liste des produit</h2>
+
+<table class="table" style="width: 80%;">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom Article</th>
+        <th scope="col">Description</th>
+        <th scope="col">Prix</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let produit of produits">
+        <th scope="row"></th>
+        <td>{{produit.nomArticle}}</td>
+        <td>{{produit.description}}</td>
+        <td>{{produit.prix}}</td>
+        <td><input class="btn btn-danger" type="button" value="Effacer" (click)="openDelateArticle(produit.idArticle)"></td>
+
+    </tr>
+    </tbody>
+</table>
+</div>
+        </td>
+    </tr>
+</table>
+
+

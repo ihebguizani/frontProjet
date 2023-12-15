@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { Router} from "@angular/router";
 import {AuthenServiceService} from "../authen-service.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {iif} from "rxjs";
 
 
 @Component({
@@ -22,15 +23,23 @@ export class LoginComponent implements OnInit{
       username:[''],})}
 
   login(){
-    debugger
+
     const authen={
       username:this.authForm.controls['username'].value,
       password:this.authForm.controls['password'].value}
   this.service.login(authen).subscribe((res:any)=>{
     console.log('res',res);
     sessionStorage.setItem('token',res.token);
-    this.router.navigateByUrl('/liste')
-  })
+    console.log(res.role);
+
+    if (res.role.roleId == 1){
+      this.router.navigateByUrl('/admin');
+    }else {
+      this.router.navigateByUrl('/liste');
+    }
+  });
+
+
   }
 
 

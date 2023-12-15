@@ -1,0 +1,22 @@
+<app-nav></app-nav>
+<br>
+<br>
+<div class="container">
+    <fieldset>
+        <form [formGroup]="commandeForm" >
+            <div class="form-group">
+                <label><span class="req">*</span> Addresse :</label>
+                <input class="form-control" type="address" formControlName="adress" placeholder="entrer le nom article"/>
+            </div>
+            <div class="form-group">
+                <label><span class="req">*</span> phone :</label>
+                <input class="form-control" type="phone" formControlName="phone" placeholder="entrer le nom article"/>
+            </div>
+
+
+            <div class="form-group">
+                <button (click)="createNow()" mat-raised-button color="primary">Passer le commande</button>
+            </div>
+        </form>
+    </fieldset>
+</div>

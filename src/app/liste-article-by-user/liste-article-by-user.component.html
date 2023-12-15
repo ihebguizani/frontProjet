@@ -1,23 +1,24 @@
+<app-nav></app-nav>
+
 <h2 class="text-center">liste des produit</h2>
 <button style="margin-left: 60%;" (click)="openup()" mat-raised-button color="primary">+Ajouter Article</button>
 <div class="product-container">
     <div *ngFor="let produit of produits" class="card-group product">
         <div class="d-lg-inline-flex">
             <div class="card">
-                <img src="..." class="card-img-top" alt="...">
+                <img *ngIf="produit?.imageBase64" [src]="produit?.imageBase64" class="card-img-top" alt="...">
+                <img *ngIf="!produit?.imageBase64" src="assets/noImage.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ produit.nomArticle }}</h5>
                     <p class="card-text"> {{produit.description}}</p>
                     <p class="card-text"><small class="text-muted">{{ produit.prix }} DT</small></p>
                 </div>
                 <div class="justify-content-md-around">
-                    <input class="btn btn-danger" type="button" value="Effacer" (click)="openupeffacer()">
-                    <input class="btn btn-secondary" type="button" value="Update" (click)="openupdate()">
+                    <input class="btn btn-danger" type="button" value="Effacer" (click)="openupeffacer(produit.idArticle)">
+                    <input class="btn btn-secondary" type="button" value="Update" (click)="openupdate(produit.idArticle)">
                     <input class="btn-check" type="button">
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<app-footer></app-footer>

@@ -1,0 +1,12 @@
+.image-container {
+  width: 99%; /* Ajustez la largeur selon vos besoins */
+  height: 600px; /* Ajustez la hauteur selon vos besoins */
+  overflow: hidden;
+  margin-left: 1%;
+}
+
+.image-container img {
+  width: 99%;
+  height: 80%;
+  object-fit: cover; /* Utilisez 'cover' pour conserver la proportion et remplir complètement le conteneur */
+}

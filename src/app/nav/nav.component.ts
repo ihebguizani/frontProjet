@@ -1,15 +1,32 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {AuthenServiceService} from "../authen-service.service";
+import {UtilisateurServiceService} from "../utilisateur-service.service";
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent {
+export class NavComponent implements OnInit{
+  userConnecte:any;
+  user:any;
 
+  constructor(public router: Router,
+              private authService:AuthenServiceService,
+              private userService:UtilisateurServiceService) {
+  }
 
-  constructor(public router: Router) {
+  ngOnInit() {
+    this.userConnecte = this.authService.getAuthenticatedUser();
+    console.log(this.userConnecte);
+    this.getUserByUserName(this.userConnecte.sub);
+  }
+  public getUserByUserName(username:string){
+
+    let rep=this.userService.getUserByUserName(username);
+
+    rep.subscribe((data: any) => this.user = data);
   }
 
   goToLogin() {
@@ -33,4 +50,13 @@ export class NavComponent {
     return sessionData !== null;
 
   }
+  logout() {
+    this.authService.logout();
+    sessionStorage.clear();
+    this.router.navigateByUrl('/login');
+  }
+
+    goToProfil() {
+        this.router.navigateByUrl('/profil');
+    }
 }

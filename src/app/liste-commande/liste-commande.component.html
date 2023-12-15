@@ -1,0 +1,42 @@
+<app-nav xmlns="http://www.w3.org/1999/html"></app-nav>
+<table>
+    <tr><td>
+        <div style="display: flex">
+            <app-sidebar></app-sidebar>
+        </div>
+    </td>
+        <td style="width:auto">
+            <div  >
+
+                <h2 style="color:darkcyan;text-align: center">Listes Des Commandes</h2>
+                <section >
+                    <div class="container py-5">
+
+                        <div class="row">
+                            <table class="table" style="width: 70%">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Adresse</th>
+                                    <th scope="col">phone</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let commande of commands">
+                                    <th scope="row">{{commande.idCommande}}</th>
+                                    <td>{{commande.adresse}}</td>
+                                    <td>{{commande.phone}}</td>
+                                    <td>{{commande.date}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </td>
+    </tr>
+</table>
+

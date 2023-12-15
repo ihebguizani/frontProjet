@@ -1,11 +1,11 @@
 <h1 mat-dialog-title class="text-center">{{inputdata.title}}</h1>
 
-<div class="container">
+<div class="container" *ngIf="checkSessionData">
  <fieldset>
-  <form [formGroup]="articleForm">
+  <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
    <div class="form-group">
     <label><span class="req">*</span> Nom Article </label>
-    <input class="form-control" type="text" formControlName="nom" placeholder="entrer le nom article"/>
+    <input class="form-control" type="text" formControlName="nomArticle" placeholder="entrer le nom article"/>
    </div>
    <div class="form-group">
     <label><span class="req">*</span> Prix </label>
@@ -19,8 +19,12 @@
       <select  class="form-select" formControlName="categorie">
         <option *ngFor="let categorie of categories" value="{{categorie.idCategorie}}">{{categorie.nomCategorie}}</option>
       </select>
-   <div class="form-group">
-    <button (click)="createNow()" mat-raised-button color="primary">Ajouter</button>
+      <div class="form-group">
+          <label for="image">Select Image:</label>
+          <input type="file" id="image" name="image" (change)="handleImageUpload($event)" accept="image/*" required formControlName="images">
+      </div>
+      <div class="form-group">
+    <button type="submit" mat-raised-button color="primary">Ajouter</button>
     <button (click)="closepop()" mat-raised-button color="warn">close</button>
    </div>
   </form>

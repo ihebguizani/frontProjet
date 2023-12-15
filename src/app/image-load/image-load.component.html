@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+        <label for="imageInput">Select Image:</label>
+        <input type="file" id="imageInput" (change)="onFileSelected($event)" accept="image/*">
+    </div>
+
+    <div *ngIf="selectedFile">
+        <img [src]="imageUrl" alt="Selected Image">
+    </div>
+
+    <button type="submit">Submit</button>
+</form>

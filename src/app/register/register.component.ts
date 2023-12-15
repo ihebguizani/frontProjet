@@ -31,22 +31,23 @@ export class RegisterComponent implements OnInit{
       password: [''],
       username:[''],
       phone:[''],
-      addresse:[''],
+      address:[''],
       email:[''],
-      role:['']
     });
   }
   public register(){
     const user={
+
       firstname:this.userForm.controls['firstname'].value,
       lastname:this.userForm.controls['lastname'].value,
       username: this.userForm.controls['username'].value,
       email:this.userForm.controls['email'].value,
       password:this.userForm.controls['password'].value,
       phone:this.userForm.controls['phone'].value,
-      addresse:this.userForm.controls['addresse'].value,
-      roleName:"CLIENT"
+      address:this.userForm.controls['address'].value,
+      role:"CLIENT"
     }
+    console.log(user);
     this.authn.register(user).subscribe((data:any)=>{
       console.log('data :',data);
       this.router.navigateByUrl('/login');

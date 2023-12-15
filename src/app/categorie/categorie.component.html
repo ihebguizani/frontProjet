@@ -1,0 +1,50 @@
+<app-nav xmlns="http://www.w3.org/1999/html"></app-nav>
+<table>
+  <tr><td>
+    <div style="display: flex">
+      <app-sidebar></app-sidebar>
+    </div>
+  </td>
+    <br>
+    <br>
+    <td style="width:auto">
+      <div  >
+
+        <h2 style="color:darkcyan;text-align: center">Listes Des Categories</h2>
+        <button style="left: 100%" mat-raised-button color="primary" (click)="ajoutCat()">+ Ajouter Categorie</button>
+        <section >
+          <div class="container py-5">
+
+            <div class="row">
+              <table class="table" style="width: 100%">
+                <thead class="thead-light">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nom Categorie</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let categorie of categories">
+                  <th scope="row"></th>
+                  <td>{{categorie.nomCategorie}}</td>
+                  <th scope="row"></th>
+                  <th scope="row"></th>
+                  <th scope="row"></th>
+                  <th scope="row"></th>
+                  <td><button class="btn-danger" (click)="opnpop(categorie.idCategorie)">Delete</button></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </td>
+  </tr>
+</table>

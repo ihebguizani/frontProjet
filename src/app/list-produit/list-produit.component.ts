@@ -28,42 +28,34 @@ export class ListProduitComponent implements OnInit {
         let resp = this.service.getProduit()
         resp.subscribe((data: any) => this.produits = data);
     }
+  checkSessionData(): boolean {
+    // Récupérer les données de session
+    const sessionData = sessionStorage.getItem('token');
 
+    // Retourner true si les données de session existent, sinon false
+    return sessionData !== null;
 
-
-    add() {
-        this.router.navigate(['create']);
-    }
-    openup(){
-        this.dialog.open(PopUpAfficheArticleComponent,{width:'40%',
-            enterAnimationDuration:'100ms',
-            exitAnimationDuration:'100ms',
-        data:{
-            title:'Add Article'
-        }})
-    }
-
-  openupeffacer() {
-    this.dialog.open(PopUpSupprimerArticleComponent,{
-      width:'20%',
-      enterAnimationDuration:'500ms',
-      exitAnimationDuration:'100ms',
-      data:{
-        title:'Est_ce que tu veux supprimer cet article?'
-      }
-    })
   }
 
-    openupdate() {
-        this.dialog.open(PopUpUpdateArticleComponent,{
-            width:'20%',
-            enterAnimationDuration:'500ms',
-            exitAnimationDuration:'100ms',
-            data:{
-                title:'mise a jour de article?'
-            }
+
+
+
+    openup() {
+      if (this.checkSessionData()) {
+        this.dialog.open(PopUpAfficheArticleComponent, {
+          width: '40%',
+          enterAnimationDuration: '100ms',
+          exitAnimationDuration: '100ms',
+          data: {
+            title: 'Ajouter Article'
+          }
         })
-    }
+      }else{
+        this.router.navigateByUrl('/register');
+        }
+}
+
+
 
   opendetaille(idArticle:number) {
     this.router.navigate(['/detaile',idArticle]);

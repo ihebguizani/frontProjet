@@ -1,14 +1,14 @@
-import {Role} from "./role";
+
 
 
 export interface User {
-    username: string;
-    password: string;
-    firstname: string;
-    lastname: string;
+    username:string;
+    password:string;
+    firstname:string;
+    lastname:string;
     email:string;
     phone:string;
-    addresse:string;
-    roleName:string;
+    address:string;
+    role:string;
     token?: string;
 }

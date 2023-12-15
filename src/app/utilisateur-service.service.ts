@@ -10,6 +10,9 @@ export class UtilisateurServiceService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<User[]>(`http://localhost:8000/getAllUsers`);
+    return this.http.get<User[]>(`http://localhost:8000/api/user/getAllUsers`);
+  }
+  getUserByUserName(username:string){
+    return this.http.get('http://localhost:8000/api/user/getByUsername/'+username);
   }
 }

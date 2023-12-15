@@ -1,1 +1,45 @@
-<p>liste-utilisateur works!</p>
+<app-nav xmlns="http://www.w3.org/1999/html"></app-nav>
+<table>
+    <tr><td>
+<div style="display: flex">
+    <app-sidebar></app-sidebar>
+</div>
+    </td>
+        <td style="width: 80%;">
+<div  >
+
+<h2 style="color:darkcyan;text-align: center">Listes Des Utilisateur</h2>
+    <section >
+        <div class="container py-5">
+
+            <div class="row">
+<table class="table" style="width: 70%">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Adresse</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+        <th scope="row"></th>
+        <td>{{user.firstname}}</td>
+        <td>{{user.lastname}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.address}}</td>
+    </tr>
+    </tbody>
+</table>
+            </div>
+        </div>
+    </section>
+
+</div>
+        </td>
+    </tr>
+</table>

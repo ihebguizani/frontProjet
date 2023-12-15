@@ -22,6 +22,15 @@ import { ArticleDesComponent } from './article-des/article-des.component';
 import { ListeArticleByUserComponent } from './liste-article-by-user/liste-article-by-user.component';
 import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur.component';
 import { ListeArticleAdminComponent } from './liste-article-admin/liste-article-admin.component';
+import { CommanderComponent } from './commander/commander.component';
+import { ProfilComponent } from './profil/profil.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ListeCommandeComponent } from './liste-commande/liste-commande.component';
+import { ImagelistComponent } from './imagelist/imagelist.component';
+import { CategorieComponent } from './categorie/categorie.component';
+import { PopUpCatComponent } from './pop-up-cat/pop-up-cat.component';
+import { PopupAjoutCatComponent } from './popup-ajout-cat/popup-ajout-cat.component';
+import { ImageLoadComponent } from './image-load/image-load.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +47,16 @@ import { ListeArticleAdminComponent } from './liste-article-admin/liste-article-
     ArticleDesComponent,
     ListeArticleByUserComponent,
     ListeUtilisateurComponent,
-    ListeArticleAdminComponent
+    ListeArticleAdminComponent,
+    CommanderComponent,
+    ProfilComponent,
+    SidebarComponent,
+    ListeCommandeComponent,
+    ImagelistComponent,
+    CategorieComponent,
+    PopUpCatComponent,
+    PopupAjoutCatComponent,
+    ImageLoadComponent,
   ],
     imports: [
         BrowserModule,

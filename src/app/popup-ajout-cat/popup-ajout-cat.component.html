@@ -1,0 +1,16 @@
+<h1 mat-dialog-title class="text-center" xmlns="http://www.w3.org/1999/html">{{inputdata.title}}</h1>
+
+<fieldset>
+  <form [formGroup]="categForm" >
+    <div class="form-group">
+      <label><span class="req">*</span> Nom Categorie : </label>
+      <input class="form-control" type="text" formControlName="nomCategorie" placeholder="entrer le categorie"/>
+    </div>
+    <div class="text-center">
+    <div class="form-group">
+      <button type="submit" mat-raised-button color="primary" (click)="ajouCat()">Ajouter</button>
+      <button (click)="closepop()" mat-raised-button color="warn">close</button>
+    </div>
+    </div>
+  </form>
+</fieldset>

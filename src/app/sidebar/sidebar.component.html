@@ -1,0 +1,42 @@
+
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 250px;">
+<br>
+    <ul class="nav nav-pills flex-column mb-auto">
+        <br>
+        <br>
+        <br>
+
+        <li *ngIf="!verifAdmin()">
+
+                <button mat-raised-button  (click)="goToArticleUser()">Mes Articles</button>
+
+
+        </li>
+    </ul>
+        <ul class="nav nav-pills flex-column mb-auto" *ngIf="verifAdmin()">
+
+        <li >
+            <button mat-raised-button  (click)="goTolisteUser()">Liste Des Utilisateurs</button>
+
+        </li>
+          <br>
+            <li >
+                <button mat-raised-button  (click)="goToListeArticle()">   Les   Articles Des User  </button>
+
+            </li>
+          <br>
+            <li >
+                <button mat-raised-button  (click)="goToListeCommande()">liste Des Commande</button>
+
+            </li>
+          <br>
+          <li >
+            <button mat-raised-button  (click)="goToCat()">liste Des Categories</button>
+
+          </li>
+
+
+    </ul>
+
+</div>
+

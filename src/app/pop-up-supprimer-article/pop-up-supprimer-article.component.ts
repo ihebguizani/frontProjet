@@ -13,9 +13,10 @@ export class PopUpSupprimerArticleComponent implements OnInit{
   constructor(@Inject(MAT_DIALOG_DATA) public data:any, private service:ProduitServiceService, private ref:MatDialogRef<PopUpAfficheArticleComponent>) {
   }
 
-  public deleteArticl(idArticle: number) {
+  public deleteArticl(idArticle:number) {
     let resp = this.service.deleteProduit(idArticle);
     resp.subscribe((data: any) => this.articles = data);
+    console.log(resp)
   }
 
     closepop() {

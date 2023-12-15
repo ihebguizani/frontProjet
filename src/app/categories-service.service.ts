@@ -13,4 +13,7 @@ export class CategoriesServiceService {
   public getCategories(){
     return this.http.get("http://localhost:8000/categories");
   }
+  public supprimerCategorie(idCategorie:number){
+    return this.http.delete('http://localhost:8000/article/categorie/'+idCategorie)
+  }
 }
